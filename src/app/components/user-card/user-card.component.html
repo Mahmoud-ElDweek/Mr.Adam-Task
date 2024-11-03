@@ -1,0 +1,26 @@
+<div (click)="goToDetails(userId)" id="user-card">
+  <div class="card-container">
+
+    <div class="avatar-container">
+      @if(avatar) {
+      <img [ngSrc]="avatar" width="92" height="92" priority>
+      }
+    </div>
+
+    <div class="content-container">
+      @if(userId) {
+      <p><strong>ID: </strong>{{userId}}</p>
+      }
+      <p>
+        <strong>Full Name: </strong>
+        @if(fName) {
+          <span>{{fName}}</span>
+        }
+        @if(lName) {
+          <span>{{lName}}</span>
+        }
+      </p>
+    </div>
+
+  </div>
+</div>

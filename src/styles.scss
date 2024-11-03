@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+
+html {
+  font-size: 10px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 85%;
+  display: block;
+  margin: 0 auto;
+  @media (max-width : 667px) {
+    max-width: 98%;
+  }
+}
+
+ul {
+  margin-left: .5rem;
+  padding: 0;
+  list-style: none;
+}
