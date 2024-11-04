@@ -1,18 +1,32 @@
-<div class="container">
-  <h1>Users</h1>
+<app-breadcrumb></app-breadcrumb>
 
-  <ul>
-    @for (user of Users; track user.id) {
+<section class="user-list-section">
+
+  <div class="container">
+    <h1 class="heading">All Users</h1>
+    @if(Users.length) {
+    <ul>
+      @for (user of Users; track user.id) {
       <li>
-        <app-user-card
-          [userId]="user.id"
-          [fName]="user.first_name"
-          [lName]="user.last_name"
-          [avatar]="user.avatar"
-          >
+        <app-user-card [userId]="user.id" [fName]="user.first_name" [lName]="user.last_name" [avatar]="user.avatar">
 
         </app-user-card>
       </li>
+      }
+    </ul>
+    } @else {
+      <div style="height: 50vh;display: flex; align-items: center; justify-content: center;">
+        <app-loader></app-loader>
+      </div>
     }
-  </ul>
-</div>
+
+
+    @if(pagesCount > 1) {
+    <div class="paginator-holder">
+      <app-pagination [currentPage]="page" [totalPages]="pagesCount" (pageChange)="onPageChanged($event)">
+      </app-pagination>
+    </div>
+    }
+  </div>
+
+</section>

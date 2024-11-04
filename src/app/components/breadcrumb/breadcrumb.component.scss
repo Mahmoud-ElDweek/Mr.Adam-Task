@@ -1,0 +1,33 @@
+
+.bread-crumb-container {
+  background-color: #202020;
+  & .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width : 667px) {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}
+
+.bread-crumb {
+  padding: 2rem;
+  color: white;
+  display: flex;
+  gap: .8rem;
+  & li {
+    font-size: 1.8rem;
+    & a {
+      color: #999999;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+  @media (max-width: 667px) {
+    padding: 1rem 0 0;
+  }
+}
+

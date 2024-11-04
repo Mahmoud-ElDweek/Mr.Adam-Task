@@ -1,1 +1,26 @@
-<h1>Hello</h1>
+@if (!User) {
+<div style="height: 100vh;display: flex; align-items: center; justify-content: center;">
+  <app-loader></app-loader>
+</div>
+} @else {
+<app-breadcrumb fName="{{User.first_name}}" lName="{{User.last_name}}"></app-breadcrumb>
+<div class="container">
+  <h1 class="heading">{{User.first_name}} {{User.last_name}}</h1>
+  <div class="user-details">
+    <div class="user-details-avatar">
+      @if(User.avatar){
+      <img [ngSrc]="User.avatar" [alt]="User.first_name" width="128" height="128" priority>
+      }
+    </div>
+    <div class="user-details-content">
+      <p><strong>User ID:</strong> {{User.id}}</p>
+      <p><strong>First Name:</strong> {{User.first_name}}</p>
+      <p><strong>Last Name:</strong> {{User.last_name}}</p>
+      <p><strong>E-mail:</strong> {{User.email}}</p>
+    </div>
+  </div>
+  <div class="btn-holder">
+    <app-back-btn></app-back-btn>
+  </div>
+</div>
+}

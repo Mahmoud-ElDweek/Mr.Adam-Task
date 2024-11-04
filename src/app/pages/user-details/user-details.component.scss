@@ -1,0 +1,21 @@
+
+.user-details{
+  display: flex;
+  gap: 2rem;
+  margin: auto;
+  width: fit-content;
+  & .user-details-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    & p {
+      margin: 0;
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.btn-holder{
+  width: fit-content;
+  margin-left: auto;
+}

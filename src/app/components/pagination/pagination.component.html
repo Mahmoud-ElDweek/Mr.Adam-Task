@@ -1,0 +1,36 @@
+<nav dir="ltr" aria-label="Page navigation" class="">
+  <ul id="paginator" class="">
+    <li>
+      <button [disabled]="currentPage === 1" [ngClass]="{'disabled' : currentPage === 1}"
+        (click)="onPageChange(currentPage - 1)" class="paginator-item prev-svg">
+        <svg  viewBox="0 0 1024 1024" class="icon" version="1.1" >
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="SVGRepo_iconCarrier">
+            <path d="M768 903.232l-50.432 56.768L256 512l461.568-448 50.432 56.768L364.928 512z" fill="#000000"></path>
+          </g>
+        </svg>
+      </button>
+    </li>
+    @for (page of pageNumbers; track page) {
+    <li>
+      <button [disabled]="page === '...'" (click)="onPageChange(page)" [ngClass]="{'active' : +currentPage === +page}"
+        class="paginator-item page-item">
+        {{ page }}
+      </button>
+    </li>
+    }
+    <li>
+      <button [disabled]="currentPage === totalPages" [ngClass]="{'disabled' : currentPage === totalPages}"
+        (click)="onPageChange(currentPage + 1)" class="paginator-item next-svg">
+        <svg viewBox="0 0 1024 1024" class="icon" version="1.1" fill="#000000">
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="SVGRepo_iconCarrier">
+            <path d="M256 120.768L306.432 64 768 512l-461.568 448L256 903.232 659.072 512z" fill="#000"></path>
+          </g>
+        </svg>
+      </button>
+    </li>
+  </ul>
+</nav>

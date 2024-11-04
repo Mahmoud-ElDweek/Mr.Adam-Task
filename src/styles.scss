@@ -7,6 +7,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #f1f1f1;
 }
 
 .container {
@@ -19,7 +20,19 @@ body {
 }
 
 ul {
-  margin-left: .5rem;
+  margin: 0;
   padding: 0;
   list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.heading {
+  font-size: 4rem;
+  color: #292929;
+  border-bottom: 1px solid black;
+  width: fit-content;
 }

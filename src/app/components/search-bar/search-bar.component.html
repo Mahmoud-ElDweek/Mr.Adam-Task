@@ -1,0 +1,16 @@
+<div id="search-bar-container">
+  <div class="input-container">
+    <input type="search" name="search-by-id" id="search-by-id" placeholder="Search Users By User ID"
+      (input)="onSearch($event)" autocomplete="off">
+  </div>
+  <div class="result-container">
+    @if(userFound) {
+    <a class="result" (click)="navigateToUserDetails(userFound.id)">
+      <img [ngSrc]="userFound.avatar" [alt]="userFound.first_name" width="40" height="40" priority>
+      <p><span>{{userFound.first_name}}</span><span>{{userFound.last_name}}</span></p>
+    </a>
+  } @else if(userNotFound) {
+    <p>{{userNotFound}}</p>
+  }
+  </div>
+</div>
