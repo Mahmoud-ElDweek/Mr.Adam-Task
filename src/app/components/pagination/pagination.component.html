@@ -1,7 +1,7 @@
 <nav dir="ltr" aria-label="Page navigation" class="">
   <ul id="paginator" class="">
     <li>
-      <button [disabled]="currentPage === 1" [ngClass]="{'disabled' : currentPage === 1}"
+      <button aria-label="Previous" [disabled]="currentPage === 1" [ngClass]="{'disabled' : currentPage === 1}"
         (click)="onPageChange(currentPage - 1)" class="paginator-item prev-svg">
         <svg  viewBox="0 0 1024 1024" class="icon" version="1.1" >
           <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -21,7 +21,7 @@
     </li>
     }
     <li>
-      <button [disabled]="currentPage === totalPages" [ngClass]="{'disabled' : currentPage === totalPages}"
+      <button aria-label="Next" [disabled]="currentPage === totalPages" [ngClass]="{'disabled' : currentPage === totalPages}"
         (click)="onPageChange(currentPage + 1)" class="paginator-item next-svg">
         <svg viewBox="0 0 1024 1024" class="icon" version="1.1" fill="#000000">
           <g id="SVGRepo_bgCarrier" stroke-width="0"></g>

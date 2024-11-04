@@ -12,8 +12,8 @@ import { Router } from '@angular/router';
   templateUrl: './search-bar.component.html',
   styleUrl: './search-bar.component.scss',
 })
-export class SearchBarComponent implements OnInit, OnDestroy {
-  userFound: UserInterface | null = null; // Initialize as null to track state better
+export class SearchBarComponent implements OnDestroy {
+  userFound: UserInterface | null = null;
   userNotFound: string = '';
   private searchSubject = new Subject<string>();
   private subscription = new Subscription();
@@ -53,10 +53,11 @@ export class SearchBarComponent implements OnInit, OnDestroy {
     this.subscription.add(userSub);
   }
 
-  ngOnInit(): void {}
 
   onSearch(event: Event) {
     const id = (event.target as HTMLInputElement).value.trim();
+    console.log(id);
+
     if (id) {
       this.searchSubject.next(id);
     } else {
